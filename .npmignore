@@ -1,0 +1,10 @@
+node_modules
+coverage/
+integration-tests
+src
+.travis.yml
+.prettierrc
+.eslintrc
+.eslintignore
+jest.config.js
+tsconfig.json

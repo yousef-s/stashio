@@ -1,0 +1,40 @@
+{
+  "name": "stashio",
+  "version": "1.0.0",
+  "description": "StashIO is a utility library designed for simple drop-in of function level caching in Node.js. It provides out of the box adapters for in-memory, Memcached and Redis and supports time-based and dynamic resolver expiry policies.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test:unit:ci": "jest --coverage=true -- src/",
+    "test:unit": "jest --watch --coverage=true -- src/ ",
+    "test:integration:ci": "docker-compose -f integration-tests/docker-compose.yml up -d && jest -- integration-tests/ && docker-compose -f integration-tests/docker-compose.yml down",
+    "test:integration": "docker-compose -f integration-tests/docker-compose.yml up && jest --watch -- integration-tests/",
+    "compile": "tsc",
+    "prepublishOnly": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yousef-s/stashio.git"
+  },
+  "author": "Yousef Soliman",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ioredis": "^4.14.4",
+    "@types/jest": "^24.0.18",
+    "@types/memcached": "^2.2.6",
+    "@types/node": "^12.7.11",
+    "@types/redis": "^2.8.14",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "eslint": "^6.3.0",
+    "ioredis": "^4.14.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2",
+    "memcached": "^2.2.2"
+  },
+  "peerDependencies": {
+    "ioredis": "^4.14.1",
+    "memcached": "^2.2.2"
+  }
+}
