@@ -9,8 +9,9 @@ cache:
 
 jobs:
   include:
-    - stage: test
-      before_script: docker-compose up -f integration-tests/docker-compose.yml
-      script: npm run test:unit
-      script: npm run test:integration
-      after_script: npm run test:coverage
+    - stage: unit tests
+      # before_script: docker-compose p -f integration-tests/docker-compose.yml up
+      script: npm run test:unit:ci
+    - stage: integration tests
+      script: npm run test:integration:ci
+      # after_script: npm run test:coverage

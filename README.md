@@ -1,5 +1,7 @@
 # 🗄 StashIO
 
+[![Coverage Status](https://coveralls.io/repos/github/yousef-s/stashio/badge.svg?branch=master)](https://coveralls.io/github/yousef-s/stashio?branch=master) [![Build Status](https://travis-ci.org/yousef-s/stashio.svg?branch=master)](https://travis-ci.org/yousef-s/stashio)
+
 StashIO is a utility library designed for simple drop-in of function level caching in Node.js. It provides out of the box adapters for in-memory, Memcached and Redis and supports time-based and dynamic resolver expiry policies.
 
 ## Features
