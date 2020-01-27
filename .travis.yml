@@ -6,12 +6,11 @@ services:
 cache:
   directories:
     - node_modules
-before_install:
-  - docker-compose up -f integration-tests/docker-compose.yml
 
 jobs:
   include:
     - stage: test
+      before_script: docker-compose up -f integration-tests/docker-compose.yml
       script: npm run test:unit
       script: npm run test:integration
       after_script: npm run test:coverage
